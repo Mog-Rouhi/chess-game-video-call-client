@@ -1,6 +1,7 @@
 import io from 'socket.io-client'
+require("dotenv").config();
 
-const URL = process.env.REACT_APP_WS_SERVER || 'http://localhost:8000'
+const URL = process.env.REACT_APP_WS_SERVER //|| 'http://localhost:8000' 
 
 const socket = io(URL)
 
