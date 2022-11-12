@@ -245,7 +245,7 @@ const ChessGameWrapper = (props) => {
 
 
     // get the gameId from the URL here and pass it to the chessGame component as a prop. 
-    const domainName = process.env.ORIGIN
+    const domainName = process.env.ORIGIN || "https://chatrange.netlify.app"
     const color = React.useContext(ColorContext)
     const { gameid } = useParams()
     const [play] = useSound(chessMove);
