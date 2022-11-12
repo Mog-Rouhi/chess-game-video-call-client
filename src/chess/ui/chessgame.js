@@ -11,6 +11,7 @@ import { useParams } from 'react-router-dom'
 import { ColorContext } from '../../context/colorcontext' 
 import VideoChatApp from '../../connection/videochat'
 const socket  = require('../../connection/socket').socket
+require("dotenv").config();
 
 
 class ChessGame extends React.Component {
@@ -244,7 +245,7 @@ const ChessGameWrapper = (props) => {
 
 
     // get the gameId from the URL here and pass it to the chessGame component as a prop. 
-    const domainName = 'http://localhost:3000'
+    const domainName = process.env.ORIGIN
     const color = React.useContext(ColorContext)
     const { gameid } = useParams()
     const [play] = useSound(chessMove);
